@@ -1,0 +1,137 @@
+.nav {
+    margin: 39px 0 0;
+
+    @include vp-1023 {
+        margin: 15px 0 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 0px 0px 20px;
+        border-bottom: 1px solid $color-mischka;
+
+        @include vp-1023 {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0px 0px 15px;
+        }
+
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        background-color: $color-ecru-white;
+        border-radius: 18px;
+        padding: 8px 16px;
+
+        &--summary {
+            display: none;
+        }
+
+        @include vp-1023 {
+            display: none;
+            max-height: 32px;
+
+            &--summary {
+                display: block;
+            }
+        }
+
+
+        &:hover,
+        &:focus {
+            background-color: $color-chrome-white;
+        }
+
+        &.is-active {
+            background-color: $color-blue-charcoa;
+
+            & .nav__link {
+                color: $color-white;
+            }
+
+            &:hover,
+            &:focus {
+                background-color: $color-blue-charcoa;
+            }
+        }
+    }
+
+    &__link {
+        border: none;
+        background-color: transparent;
+        width: fit-content;
+        text-align: center;
+        font-family: $ff-imb-plex;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 0;
+
+        @include vp-1023 {
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+
+    &__switches {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+
+        @include vp-1023 {
+            gap: 20px;
+        }
+    }
+
+    &__switch {
+        border: none;
+        background-color: transparent;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        color: $color-mischka;
+        gap: 10px;
+        padding: 0;
+        cursor: pointer;
+
+        &.is-active {
+            color: $color-blue-charcoa;
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    &__svg {
+        width: 24px;
+        height: 24px;
+
+        @include vp-1023 {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__switch-text {
+        font-size: 18px;
+        line-height: 26px;
+
+        @include vp-1023 {
+            display: none;
+        }
+    }
+}
